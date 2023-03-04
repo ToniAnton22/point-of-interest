@@ -28,7 +28,7 @@ app.use(passport.initialize())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors({
-    origin:  "http://localhost"
+    origin:  "https://tonianton22.github.io/point-of-interest.github.io/"
 }))
 app.use(fileUpload({
     useTempFlies:true,
