@@ -24,7 +24,7 @@ async function changeStatus(username){
 }
 async function loggedStatus(){
     document.getElementById("wrongCredentials").style.display = "none"
-    const response =await (await fetch("http://localhost:3300/login")).json()
+    const response =await (await fetch("https://tonianton22.github.io/point-of-interest.github.io/login")).json()
    
     if(response.username == -1){
        
@@ -40,7 +40,7 @@ async function loggedStatus(){
 
 async function logout(){
     
-    let response = await fetch("http://localhost:3300/logout",{
+    let response = await fetch("https://tonianton22.github.io/point-of-interest.github.io/logout",{
         method: "POST",
     })
     let user = response.json()
@@ -132,7 +132,7 @@ async function search(setUpMarkers,map){
     
     var type = document.getElementById('searchTxt').value;
     var node 
-    var response = await fetch(`http://localhost:3300/search/bytype/${type}`)
+    var response = await fetch(`https://tonianton22.github.io/point-of-interest.github.io/search/bytype/${type}`)
     
     if(response.status == 200){    
         
