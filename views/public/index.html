@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'/>
+    <link rel='stylesheet' type="text/css" href="index.css"/>
+    <script type='text/javascript' src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'></script>
+
+    
+</head>
+<body>
+    <div id ="wrongCredentials" hidden><h2>The credentials you've entered are wrong, please try again</h2></div>
+    <div id = "change" > 
+        <h2 > Login in below </h2>
+        <form action='/login' method = "post" id ="signup">
+            <label for="username"> Username</label>
+            <input type='text' name='username' id ="username" value = "username">
+            <label for ="passowrd">Password</label>
+            <input type="password" name="password" id= "password" value="password">
+            <button type= 'submit' value= "submit" id = "loginSubmit">Login</button>
+        </form>
+    </div><br>
+    <div class="div" id="cc" hidden>
+        <h3>Enter your card details here</h3>
+        
+        <label for ="CardNumber">Card number</label>
+        <input name ="CardNumber" type="text" id="cardnum" required><br>
+        <label for = "mExpiry">Month of expiry</label>
+        <input name="mExpiry" type="month" id="monthExp" min="2022-04" value="2022-05"><br>
+        <label for ="accountHolder">Account Holder</label>
+        <input name="accountHolder" type="text" id ="accHolder" required><br>
+        <label for = "cvv">CVV</label>
+        <input name= "cvv" type ="text" id ="securityCode" required>
+        <input type="submit" id ="ccButton" value="Submit"> 
+        
+    </div><br>
+
+    <div>
+        <h2> Search Type of Accomodation</h1>
+      
+        <input type="text" id="searchTxt">
+        <input id = "searchTypeBtn" type="button" value ="Submit">
+    </div>
+    <div class="box-content" id = "result">
+    </div>
+    <div id = "bookError" hidden></div>
+    <div id = "bookSuccess" hidden>Your booking is a success</div>
+    <div id = "bookForm" hidden>
+        <label for = "npeople">Number of people</label>
+        <input name = "npeople" type = "text" id = "npeople" placeholder="3"><br>
+        <label for = "date">Date</label>
+        <input name = "date" type = "text" id = "date" placeholder="220603">
+        <input type = "submit" id ="bookingDetails" value="Finish booking">
+    </div>
+
+    <div id = "accommodations">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Location</th>    
+                </tr>
+            </thead>
+            <tbody id ="tableBody">
+            </tbody>
+        </table>
+    </div><br>
+    
+    <div id="formLocation">
+        <h2>To add new accomodations, just click on the map!</h2>
+        
+        
+    </div>
+    <div id="addResponse" hidden></div>
+    <br>
+    <div id="addForm" hidden>
+        <lable for = "name"> Name of Accommodation</lable>
+        <input name= "name" type="text" id="name"><br>
+        <lable for = "type"> Type of Accommodation(e.g Hotel,bar,etc )</lable>
+        <input name= "type" type="text" id="type"><br>
+        <lable for = "loc"> Where is it Located?</lable>
+        <input name= "location" type="text" id="loc" ><br>
+        <lable for = "lat"> Please write it's latitude </lable>
+        <input name= "latitude" type="text" id = "lat" disabled ><br>
+        <lable for = "lon"> Please write it's longitutde </lable>
+        <input name= "longitutde" type="text" id = "lon" disabled ><br>
+        <lable for = "description"> Write a small description</lable>
+        <textarea name= "description" rows="3" cols ="60" id="description"></textarea><br>
+        <input type = "submit" id = "addButton" value = "Add Accommodation"></input>
+    </div>
+    <div id = "map" style = "width:800px; height:600px"></div>
+  
+   
+</body>
+<script type='text/javascript' src="./bundle.js" defer></script>
+</html>
